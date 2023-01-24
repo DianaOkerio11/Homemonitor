@@ -109,7 +109,7 @@ public class login extends AppCompatActivity implements View.OnClickListener{
                                     Intent intent
                                             = new Intent(login.this,
                                             User.class);
-                                    startActivity(intent);
+                                    startActivity(new Intent (login.this,ProfileActivity.class));
                                 } else {
 
                                     // sign-in failed

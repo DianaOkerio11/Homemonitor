@@ -1,5 +1,7 @@
 package com.example.homemonitor;
 
+import android.os.Bundle;
+
 public class User {
 
     public String fullName, age, email;
@@ -13,4 +15,4 @@ public class User {
         this.email = email;
     }
 
-}
+    }
