@@ -1,12 +1,25 @@
 package com.example.homemonitor;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.widget.TextView;
+import android.widget.Toast;
+
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.concurrent.atomic.AtomicMarkableReference;
 
 public class ProfileActivity extends AppCompatActivity {
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference databaseReference;
+
+    private TextView retrieveTV;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,7 +30,7 @@ public class ProfileActivity extends AppCompatActivity {
 
         // below line is used to get
         // reference for our database.
-        databaseReference = firebaseDatabase.getReference("Data");
+        databaseReference = firebaseDatabase.getReference("https://console.firebase.google.com/project/max10302-a876a/database/max10302-a876a-default-rtdb/data");
 
         // initializing our object class variable.
         retrieveTV = findViewById(R.id.idTVRetrieveData);
@@ -51,10 +64,8 @@ public class ProfileActivity extends AppCompatActivity {
             public void onCancelled(@NonNull DatabaseError error) {
                 // calling on cancelled method when we receive
                 // any error or we are not able to get the data.
-                Toast.makeText(MainActivity.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
+                Toast.makeText(ProfileActivity.this, "Fail to get data.", Toast.LENGTH_SHORT).show();
             }
         });
-    }
-}
     }
 }

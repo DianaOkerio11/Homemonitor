@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(intent);
                         finish();
                     } else {
-                        Intent mainIntent = new Intent(MainActivity.this, User.class);
+                        Intent mainIntent = new Intent(MainActivity.this, ProfileActivity.class);
                         mainIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(mainIntent);
                         finish();

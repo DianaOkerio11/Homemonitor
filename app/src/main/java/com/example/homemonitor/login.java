@@ -106,10 +106,7 @@ public class login extends AppCompatActivity implements View.OnClickListener{
 
                                     // if sign-in is successful
                                     // intent to home activity
-                                    Intent intent
-                                            = new Intent(login.this,
-                                            User.class);
-                                    startActivity(new Intent (login.this,ProfileActivity.class));
+                                    startActivity(new Intent( login.this,ProfileActivity.class));
                                 } else {
 
                                     // sign-in failed
